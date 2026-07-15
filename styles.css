@@ -240,6 +240,8 @@ p { color: var(--muted); }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
 /* Page heroes (inner pages) */
+/* The gold bar closes the hero so it does not cut straight into the page
+   background. On the homepage the marquee's gold top border does this job. */
 .page-hero {
   position: relative;
   min-height: 46vh;
@@ -247,6 +249,7 @@ p { color: var(--muted); }
   align-items: center;
   background-size: cover;
   background-position: center;
+  border-bottom: 4px solid var(--gold);
 }
 .page-hero::before {
   content: "";
@@ -258,7 +261,6 @@ p { color: var(--muted); }
 .page-hero .hero-content { padding: 90px 0 70px; }
 .hero-services { background-image: url("assets/hero-services.jpg"); }
 .hero-about { background-image: url("assets/hero-about.jpg"); }
-.hero-gallery { background-image: url("assets/hero-gallery.jpg"); }
 .hero-book { background-image: url("assets/hero-book.jpg"); }
 
 /* ---------- Marquee (only full-bleed band) ---------- */
@@ -546,34 +548,6 @@ p { color: var(--muted); }
   transform: scale(1.25);
 }
 
-/* ---------- Gallery page grid ---------- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-.gallery-grid figure { position: relative; }
-.gallery-grid img {
-  width: 100%;
-  aspect-ratio: 16 / 11;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.gallery-grid figure:hover img {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lift);
-}
-.gallery-grid figcaption {
-  margin-top: 10px;
-  color: var(--silver-dim);
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-}
-
 /* ---------- Process steps ---------- */
 .process-grid {
   display: grid;
@@ -838,7 +812,6 @@ p { color: var(--muted); }
   .section-card { padding: 50px 36px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-card { grid-template-columns: repeat(2, 1fr); padding: 44px 36px; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -875,7 +848,6 @@ p { color: var(--muted); }
   .section-card { padding: 36px 22px; }
   .services-grid { grid-template-columns: 1fr; }
   .stats-card { grid-template-columns: 1fr 1fr; gap: 26px; }
-  .gallery-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
